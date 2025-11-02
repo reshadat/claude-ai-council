@@ -19,17 +19,17 @@ This installs to `~/.claude/`:
 │   ├── skeptical-architect.md
 │   └── custom/                 # Your custom agents go here
 └── commands/
-    └── council.md              # /sc:council slash command
+    └── council.md              # /council slash command
 ```
 
 ---
 
 ## 💬 Basic Usage
 
-### The `/sc:council` Command
+### The `/council` Command
 
 ```bash
-/sc:council
+/council
 
 Problem: [Your specific question or decision]
 Context: [Relevant background information]
@@ -37,7 +37,7 @@ Context: [Relevant background information]
 
 **Example**:
 ```bash
-/sc:council
+/council
 
 Problem: Should we add Redis caching or optimize PostgreSQL queries?
 Context: Dashboard loads in 800ms, 2000 concurrent users, PostgreSQL 14
@@ -183,7 +183,7 @@ This means you're never locked in.
 ### Custom Agent Selection
 
 ```bash
-/sc:council --agents="skeptical,performance,security"
+/council --agents="skeptical,performance,security"
 ```
 
 Default panels:
@@ -211,7 +211,7 @@ Constraints: 3 frontend devs, can't rewrite in new framework
 ### Including Code References
 
 ```bash
-/sc:council
+/council
 
 Problem: Review this authentication implementation
 Context: src/auth/session.ts lines 45-120
@@ -270,7 +270,7 @@ Don't just pick the recommendation. Read all 3 approaches:
 ### Example 1: Database Choice
 
 ```bash
-/sc:council
+/council
 
 Problem: PostgreSQL vs MongoDB for event logging system
 Context:
@@ -294,7 +294,7 @@ Context:
 ### Example 2: API Design
 
 ```bash
-/sc:council
+/council
 
 Problem: REST vs GraphQL for mobile app API
 Context:
@@ -317,7 +317,7 @@ Context:
 ### Example 3: Caching Strategy
 
 ```bash
-/sc:council
+/council
 
 Problem: Add Redis caching layer for slow product catalog
 Context:
@@ -378,20 +378,20 @@ Don't skip straight to Redis without measuring.
 ### Other Slash Commands
 
 ```bash
-/sc:analyze      # Deep code analysis
-/sc:design       # Architecture design
-/sc:research     # Deep research mode
-/sc:implement    # Feature implementation
+/analyze      # Deep code analysis
+/design       # Architecture design
+/research     # Deep research mode
+/implement    # Feature implementation
 ```
 
 ### Combining with Council
 
 ```bash
 # First: Research with deep-research
-/sc:research "Latest React state management patterns 2025"
+/research "Latest React state management patterns 2025"
 
 # Then: Council decision
-/sc:council
+/council
 Problem: Choose state management for our app
 Context: [Use research findings]
 ```

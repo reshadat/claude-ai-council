@@ -511,7 +511,7 @@ ls ~/.claude/agents/custom/
 
 ### Using Custom Agents
 
-#### In /sc:council Command
+#### In /council Command
 
 Edit `~/.claude/commands/council.md` to reference your custom agent:
 
@@ -561,7 +561,7 @@ Task with prompt including agent persona + test scenario
 
 ```bash
 # Include in council with other agents
-/sc:council --agents="skeptical,my-agent,system"
+/council --agents="skeptical,my-agent,system"
 ```
 
 ### 4. Evaluate Output

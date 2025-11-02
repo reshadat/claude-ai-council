@@ -16,10 +16,10 @@ That's it! AI Council is now installed to `~/.claude/`
 
 ## First Use
 
-In Claude Code, use the `/sc:council` command:
+In Claude Code, use the `/council` command:
 
 ```
-/sc:council
+/council
 
 Problem: Should we use PostgreSQL or MongoDB for our app?
 

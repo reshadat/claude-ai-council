@@ -89,7 +89,7 @@ ai-council add-agent ./my-agent.md
 # Launch via Task tool in Claude Code
 
 # Test in council
-/sc:council with your agent included
+/council with your agent included
 ```
 
 ### 3. Submit for Review
@@ -253,7 +253,7 @@ ls ~/.claude/agents/
 ls ~/.claude/commands/
 
 # Test in Claude Code
-# Use /sc:council command
+# Use /council command
 
 # Test uninstall
 ai-council uninstall

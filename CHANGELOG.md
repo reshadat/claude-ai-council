@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial release of AI Council for Claude Code
 - Skeptical Architect agent (30-year startup veteran persona)
-- `/sc:council` slash command for multi-agent consensus
+- `/council` slash command for multi-agent consensus
 - CLI installer for system-wide installation (`~/.claude`)
 - Custom agent extensibility (`ai-council add-agent`)
 - Comprehensive documentation (README, USAGE, CUSTOM_AGENTS)

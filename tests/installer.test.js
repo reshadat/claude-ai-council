@@ -202,4 +202,93 @@ describe('AI Council Installer', () => {
       expect(exists).toBe(true);
     });
   });
+
+  describe('Agent Templates', () => {
+    test('should have skeptical-architect template', async () => {
+      const templatesDir = path.join(__dirname, '..', 'templates', 'agents');
+      const skepticalPath = path.join(templatesDir, 'skeptical-architect.md');
+
+      const exists = await fs.access(skepticalPath)
+        .then(() => true)
+        .catch(() => false);
+
+      expect(exists).toBe(true);
+
+      // Verify it has expected content
+      const content = await fs.readFile(skepticalPath, 'utf8');
+      expect(content).toContain('Skeptical Architect');
+      expect(content).toContain('30 Years');
+      expect(content).toContain('Option A');
+      expect(content).toContain('Option B');
+      expect(content).toContain('Option C');
+    });
+
+    test('should have generative-architect template', async () => {
+      const templatesDir = path.join(__dirname, '..', 'templates', 'agents');
+      const generativePath = path.join(templatesDir, 'generative-architect.md');
+
+      const exists = await fs.access(generativePath)
+        .then(() => true)
+        .catch(() => false);
+
+      expect(exists).toBe(true);
+
+      // Verify it has expected content
+      const content = await fs.readFile(generativePath, 'utf8');
+      expect(content).toContain('Generative Architect');
+      expect(content).toContain('Master Builder');
+      expect(content).toContain('Core');
+      expect(content).toContain('Enhanced');
+      expect(content).toContain('Visionary');
+    });
+
+    test('skeptical and generative architects should be complementary', async () => {
+      const templatesDir = path.join(__dirname, '..', 'templates', 'agents');
+      const skepticalPath = path.join(templatesDir, 'skeptical-architect.md');
+      const generativePath = path.join(templatesDir, 'generative-architect.md');
+
+      const skepticalContent = await fs.readFile(skepticalPath, 'utf8');
+      const generativeContent = await fs.readFile(generativePath, 'utf8');
+
+      // Skeptical should focus on challenges and options
+      expect(skepticalContent).toContain('Devil\'s Advocate');
+      expect(skepticalContent).toContain('Boring But Works');
+      expect(skepticalContent).toContain('What could go wrong');
+
+      // Generative should focus on building and momentum
+      expect(generativeContent).toContain('Steelman');
+      expect(generativeContent).toContain('Ship in 2 weeks');
+      expect(generativeContent).toContain('Momentum');
+
+      // Both should have experience
+      expect(skepticalContent).toContain('30 years');
+      expect(generativeContent).toContain('30 years');
+    });
+  });
+
+  describe('Council Command', () => {
+    test('should have council command with both architects', async () => {
+      const commandsDir = path.join(__dirname, '..', 'templates', 'commands');
+      const councilPath = path.join(commandsDir, 'council.md');
+
+      const exists = await fs.access(councilPath)
+        .then(() => true)
+        .catch(() => false);
+
+      expect(exists).toBe(true);
+
+      const content = await fs.readFile(councilPath, 'utf8');
+
+      // Should reference both custom architects
+      expect(content).toContain('skeptical-architect');
+      expect(content).toContain('generative-architect');
+
+      // Should have Build Mode and Balanced Council
+      expect(content).toContain('Build Mode');
+      expect(content).toContain('Balanced Council');
+
+      // Should explain when to use both
+      expect(content).toContain('Using Both Together');
+    });
+  });
 });

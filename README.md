@@ -33,10 +33,10 @@ ai-council install
 
 ### Usage in Claude Code
 
-Once installed, use the `/sc:council` command:
+Once installed, use the `/council` command:
 
 ```bash
-/sc:council
+/council
 
 Problem: Should we implement OAuth2 + JWT + auth microservice, or use session-based authentication?
 
@@ -216,7 +216,7 @@ Together they create:
 - **Clear path forward** with **escape hatches** identified
 
 ```bash
-/sc:council --agents="generative,skeptical,system,security"
+/council --agents="generative,skeptical,system,security"
 
 # Generative: Here's the 2-week Core version...
 # Skeptical: But watch out for these failure modes...
@@ -298,7 +298,7 @@ Migration Path:
 │   ├── generative-architect.md   # Builds momentum, provides execution path
 │   └── custom/                    # Your custom agents
 └── commands/
-    └── council.md                 # /sc:council slash command
+    └── council.md                 # /council slash command
 ```
 
 ### System Requirements
@@ -354,7 +354,7 @@ ai-council add-agent ./my-domain-expert.md
 ### 3. Use in Council
 
 ```bash
-/sc:council --agents="skeptical,system,my-domain-expert"
+/council --agents="skeptical,system,my-domain-expert"
 ```
 
 See [CUSTOM_AGENTS.md](docs/CUSTOM_AGENTS.md) for detailed guide.
@@ -365,28 +365,28 @@ See [CUSTOM_AGENTS.md](docs/CUSTOM_AGENTS.md) for detailed guide.
 
 ### Architecture Decisions
 ```bash
-/sc:council
+/council
 Problem: Monolith vs microservices for new feature?
 Context: 10K users, 5 devs, Node.js stack
 ```
 
 ### Performance Optimization
 ```bash
-/sc:council
+/council
 Problem: Add Redis caching or optimize PostgreSQL queries?
 Context: 500ms average response time, 1000 concurrent users
 ```
 
 ### Technology Selection
 ```bash
-/sc:council
+/council
 Problem: Next.js vs vanilla React for new dashboard?
 Context: Team knows React, need SEO, have backend API
 ```
 
 ### Code Review
 ```bash
-/sc:council
+/council
 Problem: Review this authentication implementation
 Context: [paste code or file reference]
 ```
@@ -411,16 +411,16 @@ Context: [paste code or file reference]
 
 ```bash
 # Build mode (momentum-focused)
-/sc:council --agents="generative,skeptical,system,quality"
+/council --agents="generative,skeptical,system,quality"
 
 # Architecture review
-/sc:council --agents="skeptical,system,backend,security"
+/council --agents="skeptical,system,backend,security"
 
 # Performance optimization
-/sc:council --agents="performance,skeptical,root-cause-analyst"
+/council --agents="performance,skeptical,root-cause-analyst"
 
 # Feature development
-/sc:council --agents="generative,requirements-analyst,quality"
+/council --agents="generative,requirements-analyst,quality"
 ```
 
 ---
@@ -442,14 +442,6 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 ## 📄 License
 
 MIT License - see [LICENSE](LICENSE) for details.
-
----
-
-## 🙏 Acknowledgments
-
-- Inspired by [ai-council-mcp](https://github.com/0xAkuti/ai-council-mcp) multi-AI consensus approach
-- Built for the [Claude Code](https://claude.ai/claude-code) developer community
-- Skeptical Architect persona inspired by 30 years of real startup battle scars
 
 ---
 
