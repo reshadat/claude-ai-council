@@ -1,0 +1,51 @@
+{
+  "name": "@ai-council/claude",
+  "version": "1.0.0",
+  "description": "Multi-agent consensus system for Claude Code with skeptical architecture review",
+  "main": "src/index.js",
+  "bin": {
+    "ai-council": "./bin/cli.js"
+  },
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "install-global": "node bin/cli.js install",
+    "uninstall-global": "node bin/cli.js uninstall"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "ai-council",
+    "multi-agent",
+    "architecture-review",
+    "skeptical-architect",
+    "consensus"
+  ],
+  "author": "AI Council Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AC-Reshadat/ai-council.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AC-Reshadat/ai-council/issues"
+  },
+  "homepage": "https://github.com/AC-Reshadat/ai-council#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "templates/",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "inquirer": "^8.2.5"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0"
+  }
+}
