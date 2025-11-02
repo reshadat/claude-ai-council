@@ -1,0 +1,42 @@
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+tests/
+coverage/
+*.test.js
+*.spec.js
+
+# Development
+.github/
+.git/
+.gitignore
+.vscode/
+.idea/
+
+# Documentation
+claudedocs/
+
+# Environment
+.env
+.env.*
+
+# Dependencies
+node_modules/
+
+# Build artifacts
+*.tgz
+dist/
+build/
+
+# Misc
+.editorconfig
+.prettierrc
+.eslintrc*

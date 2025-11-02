@@ -1,10 +1,10 @@
 {
-  "name": "@ai-council/claude",
+  "name": "claude-ai-council",
   "version": "1.0.0",
   "description": "Multi-agent consensus system for Claude Code with skeptical architecture review",
   "main": "src/index.js",
   "bin": {
-    "ai-council": "./bin/cli.js"
+    "ai-council": "bin/cli.js"
   },
   "scripts": {
     "test": "jest",
@@ -25,12 +25,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AC-Reshadat/ai-council.git"
+    "url": "git+https://github.com/reshadat/claude-ai-council.git"
   },
   "bugs": {
-    "url": "https://github.com/AC-Reshadat/ai-council/issues"
+    "url": "https://github.com/reshadat/claude-ai-council/issues"
   },
-  "homepage": "https://github.com/AC-Reshadat/ai-council#readme",
+  "homepage": "https://github.com/reshadat/claude-ai-council#readme",
   "engines": {
     "node": ">=18.0.0"
   },
