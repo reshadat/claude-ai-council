@@ -9,8 +9,9 @@ AI Council brings the "wisdom of crowds" approach to Claude Code by enabling **p
 ## ✨ Features
 
 - **🎯 Multi-Agent Consensus**: Query multiple specialized Claude Code agents in parallel
-- **👴 Skeptical Architect**: 30-year startup veteran who challenges complexity and provides 2-3 viable approaches
-- **⚖️ Devil's Advocate**: All options are challenged, including the recommendations
+- **👴 Skeptical Architect**: 30-year veteran who challenges complexity and provides 3 viable approaches (boring/balanced/ambitious)
+- **🏗️ Generative Architect**: Master builder who finds ways to make it work and provides execution path (core/enhanced/visionary)
+- **⚖️ Balanced Perspective**: Destruction (Skeptical) + Construction (Generative) = Informed decisions
 - **🚀 Startup-Aware**: Optimized for small teams, limited resources, and pivot probability
 - **🔧 Extensible**: Add your own custom agents easily
 - **📦 System-Wide**: Installs to `~/.claude` for use across all projects
@@ -137,6 +138,95 @@ Truth #4: "Users don't care about your tech stack"
 
 ---
 
+## 🏗️ The Generative Architect
+
+The complement to the Skeptical Architect - a **Master Builder** with 30 years of shipping experience who:
+
+### Provides Evolutionary Build Path
+
+```yaml
+Core - Ship in 2 Weeks:
+  What: Minimum viable version that proves the concept
+  Focus: One specific use case solved completely
+  Learns: What users actually want vs what you predicted
+
+Enhanced - Build Once Core Validates:
+  What: Compound on validated Core
+  Triggers: Specific metrics and user feedback
+  Adds: Capabilities that amplify Core value
+
+Visionary - The Moonshot:
+  What: Category-defining future state
+  Path: Evolutionary, not revolutionary
+  Built on: Proven foundation from Core + Enhanced
+```
+
+### Finds Ways to Make It Work
+
+```
+Your idea: "Build AI-powered code review tool"
+
+Generative Analysis:
+  ✅ This solves real pain (manual review is slow)
+  ✅ Timing is right (post-Copilot trust in AI)
+  ✅ Here's how we ship in 2 weeks...
+
+Core (Week 1-2):
+  - GitHub Action that comments on PRs
+  - Uses OpenAI API to detect issues
+  - Learn: What developers actually act on
+
+Enhanced (Month 2):
+  - Team-specific rule learning
+  - Auto-fix suggestions
+  - Build when: 50+ PRs with 40%+ acceptance
+
+Visionary (Month 4-6):
+  - Real-time IDE integration
+  - Proactive architecture suggestions
+  - Category creation: "AI code quality partner"
+```
+
+### Builds Momentum
+
+```yaml
+Truth #1: "Shipped imperfect beats perfect unshipped"
+  → Market feedback > Internal perfection
+
+Truth #2: "Users will surprise you every time"
+  → Build to learn, not to predict
+
+Truth #3: "Momentum is a feature"
+  → Shipping creates clarity and resources
+
+Truth #4: "Constraints breed creativity"
+  → Limited resources = sharper solutions
+```
+
+---
+
+## ⚖️ Using Both Architects Together
+
+**Generative** provides the path: "Here's how to build it"
+**Skeptical** provides the reality check: "Here's what could go wrong"
+
+Together they create:
+- **Momentum** (Generative) balanced with **prudence** (Skeptical)
+- **Optimism** about possibilities with **awareness** of risks
+- **Clear path forward** with **escape hatches** identified
+
+```bash
+/sc:council --agents="generative,skeptical,system,security"
+
+# Generative: Here's the 2-week Core version...
+# Skeptical: But watch out for these failure modes...
+# System: Here's how it scales...
+# Security: Here's what you must protect...
+# = Balanced decision with execution path + risk mitigation
+```
+
+---
+
 ## 📖 Example Output
 
 <details>
@@ -204,7 +294,8 @@ Migration Path:
 ```
 ~/.claude/
 ├── agents/
-│   ├── skeptical-architect.md    # 30-year startup veteran
+│   ├── skeptical-architect.md    # Challenges complexity, provides 3 options
+│   ├── generative-architect.md   # Builds momentum, provides execution path
 │   └── custom/                    # Your custom agents
 └── commands/
     └── council.md                 # /sc:council slash command
@@ -310,17 +401,26 @@ Context: [paste code or file reference]
 - **security-engineer**: Vulnerabilities
 - **performance-engineer**: Speed & efficiency
 
+### Balanced Council (Recommended)
+- **generative-architect**: Execution path (how to build)
+- **skeptical-architect**: Reality check (what could fail)
+- **security-engineer**: Protection requirements
+- **performance-engineer**: Speed & efficiency
+
 ### Custom Panels
 
 ```bash
-# Feature development panel
-/sc:council --agents="skeptical,requirements-analyst,quality-engineer"
+# Build mode (momentum-focused)
+/sc:council --agents="generative,skeptical,system,quality"
 
-# Architecture review panel
+# Architecture review
 /sc:council --agents="skeptical,system,backend,security"
 
-# Performance panel
+# Performance optimization
 /sc:council --agents="performance,skeptical,root-cause-analyst"
+
+# Feature development
+/sc:council --agents="generative,requirements-analyst,quality"
 ```
 
 ---

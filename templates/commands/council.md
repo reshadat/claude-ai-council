@@ -15,16 +15,29 @@ Based on the problem type, select 3-5 agents:
 **Feature Dev**: skeptical-architect, requirements-analyst, system-architect, quality-engineer
 **Performance**: performance-engineer, skeptical-architect, root-cause-analyst, system-architect
 **Architecture**: skeptical-architect, system-architect, backend-architect, security-engineer
+**Build Mode**: generative-architect, skeptical-architect, system-architect, quality-engineer
+**Balanced Council**: generative-architect, skeptical-architect, security-engineer, performance-engineer
+
+## Custom Personas Available
+
+**skeptical-architect**: Challenges assumptions, provides 3 options (boring/balanced/ambitious), devil's advocate
+**generative-architect**: Finds ways to make it work, provides execution path (core/enhanced/visionary), builds momentum
+
+**When to use both**:
+- Generative shows "how to build it"
+- Skeptical challenges "should you build it"
+- Together they create balanced decision-making
 
 ## Phase 1: Parallel Consultation
 
 Launch selected agents in **parallel** (single message, multiple Task calls).
 
-**IMPORTANT**: Before launching agents, you MUST read the skeptical architect persona:
+**IMPORTANT**: Before launching custom agents, you MUST read their persona files:
 
-1. Read ~/.claude/agents/skeptical-architect.md
-2. Extract the full persona content
-3. Include it in the skeptical architect Task prompt below
+1. For skeptical-architect: Read ~/.claude/agents/skeptical-architect.md
+2. For generative-architect: Read ~/.claude/agents/generative-architect.md
+3. Extract the full persona content
+4. Include it in the respective Task prompts below
 
 Then launch all agents in a SINGLE message with multiple Task calls:
 
@@ -54,7 +67,34 @@ Task({
 })
 ```
 
-### Agents 2-4: Built-in Subagents
+### Agent 2: Generative Architect (Custom Persona - Optional)
+```
+Task({
+  subagent_type: "general-purpose",
+  description: "Generative architect analysis",
+  prompt: `
+    [FULL CONTENT FROM generative-architect.md GOES HERE]
+
+    Now apply this persona to analyze:
+
+    Context: {{CONTEXT}}
+    Problem: {{PROBLEM}}
+
+    Provide your generative analysis with the path forward:
+    - Core: Ship in 2 weeks (minimum viable version)
+    - Enhanced: Build once Core validates
+    - Visionary: The moonshot that becomes possible
+
+    For each layer include:
+    - Why this works
+    - What you'll learn
+    - Resource requirements
+    - Implementation roadmap
+  `
+})
+```
+
+### Agents 3-5: Built-in Subagents
 ```
 Task({
   subagent_type: "system-architect",
@@ -144,12 +184,34 @@ Analyze all anonymous responses and produce:
 **Unanimous**: [Yes/No]
 **Dissent Worth Noting**: [If applicable - especially skeptical architect's concerns]
 
-## 🎯 Using the Skeptical Architect's 3 Approaches
+## 🎯 Using Custom Personas
 
-The skeptical architect always provides 3 options. Don't just pick the recommendation:
+### Skeptical Architect's 3 Approaches
+
+The skeptical architect provides 3 options with trade-offs:
 
 - **Option A (Boring)**: Choose if speed and simplicity matter most
 - **Option B (Balanced)**: Choose if growth is likely
 - **Option C (Ambitious)**: Choose if you have team capacity and proven need
 
 Consider escape hatches: How to migrate if you choose wrong?
+
+### Generative Architect's 3 Layers
+
+The generative architect provides an evolutionary build path:
+
+- **Core (2 weeks)**: Minimum viable version that proves the concept
+- **Enhanced (Month 2-3)**: Build once Core validates and hits triggers
+- **Visionary (Month 4-6)**: The moonshot that becomes possible
+
+Focus on shipping Core first, then iterate based on real user feedback.
+
+### Using Both Together
+
+**Generative** provides the execution path ("Here's how to build it")
+**Skeptical** provides the reality check ("Here's what could go wrong")
+
+Together they create:
+- Momentum (Generative) balanced with prudence (Skeptical)
+- Optimism about possibilities with awareness of risks
+- Clear path forward with escape hatches identified
