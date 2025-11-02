@@ -1,6 +1,6 @@
 {
   "name": "claude-ai-council",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Multi-agent consensus system for Claude Code with skeptical architecture review",
   "main": "src/index.js",
   "bin": {
